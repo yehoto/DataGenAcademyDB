@@ -73,7 +73,7 @@ public class AcademyDatabaseLoader {
 
     private static void clearTables(Connection conn) throws SQLException {
         try (Statement stmt = conn.createStatement()) {
-            stmt.executeUpdate("TRUNCATE TABLE Exams, Students, Courses");
+            stmt.executeUpdate("TRUNCATE TABLE Exams, Students, Courses RESTART IDENTITY;");
         }
     }
 
